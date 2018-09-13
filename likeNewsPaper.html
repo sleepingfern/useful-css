@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="img/ic_fav.png" />
+    <link rel="bookmark" href="img/ic_fav.png" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>像報紙一樣的一列文字分欄-蕨類的網頁好用語法整理</title>
+    <meta name="keywords" content="css,column-rule,column-span,蕨類,Fern,UI,design,蕨類的UI筆記,UI筆記" />
+    <meta name="description" content="月CSS做文字分欄：column-rule-蕨類自己常用的Html&CSS物件、設定或效果" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--     <link rel="stylesheet" href="css/docs.theme.min.css"> -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--[if lt IE 9]>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <!-- <script src="js/jquery.min 2.js"></script> -->
+    <!--js順序有差要注意-->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/miller_code.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light" role="navigation">
+        <div class="container container-F">
+            <div class="navbar-header">
+                <h1 class="logo m-0"><a class="navbar-brand" href="index.html"><img id="logoImg" alt="蕨類的網頁好用語法整理" src="img/logo.png"></a></h1>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">主功能列</span>
+                    <span class="glyphicon glyphicon-menu-hamburger"></span>
+                    <span class="icon-text">主功能</span>
+                </button>
+            </div>
+            <!-- 手機隱藏選單區 -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse wrapper-menu">
+                <!-- 主選單 -->
+                <ul class="nav navbar-nav navbar-right main-menu">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-hand-right"></span>CSS<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="table.html">表格&nbsp;&lt;table&gt;</a></li>
+                            <li><a href="likeNewsPaper.html">像報紙一樣的一列文字分欄&nbsp;column-rule Property</a></li>
+                            <li><a href="rangeSlider.html">拉霸滑條&nbsp;Range Slider</a></li>
+                            <li><a href="">還沒想到</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-hand-left"></span>JavaScript<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript.html">看看他寫的有用js</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>關於Fern<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://lihi.cc/beXo5/c-newspa" target="_blank">看他的部落格</a></li>
+                            <li><a href="https://twitter.com/fernhsu" target="_blank">看他的推特</a></li>
+                            <li><a href="contact.html">聯絡他</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- 手機隱藏選單區結束 -->
+            <script type="text/javascript">
+            var $ofweidht = innerWidth; //取得螢幕寬度
+            if ($ofweidht <= 768) { //設定判斷條件，大於等於1280時frametop的CSS屬性為block
+                document.getElementById("logoImg").src = 'img/logo-small.png';
+            } else {
+                document.getElementById("logoImg").src = 'img/logo.png';
+            }
+            </script>
+        </div>
+    </nav>
+    <!--nav結束-->
+    <section>
+        <div class="row m-0">
+            <div id="mySidenav" class="col-xs-12 col-sm-3 sidenav">
+                <ul class="media-list">
+                    <li class="row">
+                        <div class="col-xs-12">
+                            <a class="pull-right closebtn-smallLeft p-0" href="javascript:void(0)" onclick="closeNav()">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <h2 class="h2 mb-20">CSS</h2>
+                <ul class="nav nav-tabs tab-side">
+                    <li class="active">
+                        <a href="table.html" class="h3" aria-controls="表格">表格&nbsp;&lt;table&gt;</a>
+                    </li>
+                    <li class="active">
+                        <a href="likeNewsPaper.html" class="h3" aria-controls="像報紙一樣的一列文字分欄">像報紙一樣的一列文字分欄&nbsp;CSS</a>
+                    </li>
+                    <li>
+                        <a href="rangeSlider.html" class="h3" aria-controls="拉霸滑條Range Slider">拉霸滑條&nbsp;Range Slider</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="mySidenavRight" class="col-xs-12 col-sm-9">
+                <!-- 像報紙一樣，自動分欄的css屬性 -->
+                <style>
+                .newspaper {
+                    /*要幾欄*/
+                    -webkit-column-count: 3;
+                    /* Chrome, Safari, Opera */
+                    -moz-column-count: 3;
+                    /* Firefox */
+                    column-count: 3;
+
+
+                    /*欄位的間隔多寬*/
+                    -webkit-column-gap: 40px;
+                    /* Chrome, Safari, Opera */
+                    -moz-column-gap: 40px;
+                    /* Firefox */
+                    column-gap: 40px;
+
+
+                    /*欄位間隔的樣式*/
+                    -webkit-column-rule: 4px double #f66;
+                    /* Chrome, Safari, Opera */
+                    -moz-column-rule: 4px double #f66;
+                    /* Firefox */
+                    column-rule: 4px double #f66;
+                    /*這是拆開的樣子
+                    column-rule-width:;
+                    column-rule-style:;
+                    column-rule-color:;*/
+
+                    /*常用的大概有這幾種樣式
+                    hidden
+                    dotted
+                    dashed
+                    solid
+                    double*/
+                }
+
+                .spanall {
+                    -webkit-column-span: all;
+                    /* Chrome, Safari, Opera */
+                    column-span: all;
+                }
+                </style>
+                <h1>The column-rule Property列中的欄位規則屬性</h1>
+                <p>列中的欄位規則屬性設置，可定義欄位間隔的的寬、樣式以及顏色：</p>
+                <div class="newspaper">
+                    《乾杯》/作詞：阿信/作曲：阿信/編曲：五月天+于京延<br>
+                    會不會 有一天 時間真的能倒退/退回 你的我的 回不去的 悠悠的歲月/也許會 有一天 世界真的有終點/也要和你舉起回憶釀的甜 和你再乾一杯/如果說 要我選出 代表青春 那個畫面/浮現了 那滴眼淚 那片藍天 那年畢業/那一張 邊哭邊笑 還要擁抱 是你的臉/想起來 可愛可憐 可歌可泣 可是多懷念/懷念總是 突然懷念 不談條件/當回憶 衝破考卷 衝出歲月 在我眼前/我和你 流著汗水 喝著汽水 在操場邊/說好了 無論如何 一起走到 未來的世界/現在就是 那個未來 那個世界/為什麼 你的身邊 我的身邊 不是同一邊/友情曾像 諾亞方舟 堅強誓言/只是我 望著海面 等著永遠 模糊了視線/會不會 有一天 時間真的能倒退/退回 你的我的 回不去的 悠悠的歲月/也許會 有一天 世界真的有終點/也要和你舉起回憶釀的甜 和你再乾一杯/這些年 買了四輪 買了手錶 買了單眼/卻發現 追不到的 停不了的 還是那些/人生是 只有認命 只能宿命 只好宿醉/只剩下 高的笑點 低的哭點 卻沒成熟點/成熟就是 幻想幻滅 一場磨練/為什麼 只有夢想 越磨越小 小到不見/有時候 好想流淚 好想流淚 卻沒眼淚/期待會 你會不會 他會不會 開個同學會/他在等你 你在等我 我在等誰/又是誰 孩子沒睡 電話沒電 心情沒準備/天空不斷 黑了又亮 亮了又黑/那光陰 滄海桑田 遠走高飛 再沒力氣追/會不會 有一天 時間真的能倒退/退回 你的我的 回不去的 悠悠的歲月/也許會 有一天 世界真的有終點/也要和你舉起回憶釀的甜 和你再乾一杯/會不會 有一天 時間真的能倒退/退回 你的我的 回不去的 悠悠的歲月/也許會 有一天 世界真的有終點/也要和你舉起回憶釀的甜 和你再乾一杯/終究會 有一天 我們都變成昨天/是你 陪我走過 一生一回 匆匆的人間/有一天 就是今天 今天就是有一天/說出一直沒說 對你的感謝 和你再乾一杯/再乾一杯永遠 喝了就能萬歲 歲歲和年年/<br>＊時間都停了 他們都回來了/懷念的人啊 等你的來到/
+                </div>
+                <p class="ph-20"><strong>注意：</strong>他在firefox以及IE9以下不適用哦(2018/9)</p>
+                <!-- / 像報紙一樣，自動分欄的css屬性 -->
+                <hr>
+                <!-- 或是像這樣，分欄中有一維持一列的標題 -->
+                <div class="newspaper">
+                    <h2 class="h2 spanall">我是堅持排成一列(column-span:all)的一列文字</h2>《乾杯》/作詞：阿信/作曲：阿信/編曲：五月天+于京延<br>
+                    會不會 有一天 時間真的能倒退/退回 你的我的 回不去的 悠悠的歲月/也許會 有一天 世界真的有終點/也要和你舉起回憶釀的甜 和你再乾一杯/如果說 要我選出 代表青春 那個畫面/浮現了 那滴眼淚 那片藍天 那年畢業/那一張 邊哭邊笑 還要擁抱 是你的臉/想起來 可愛可憐 可歌可泣 可是多懷念/懷念總是 突然懷念 不談條件/當回憶 衝破考卷 衝出歲月 在我眼前/我和你 流著汗水 喝著汽水 在操場邊/說好了 無論如何 一起走到 未來的世界/現在就是 那個未來 那個世界/為什麼 你的身邊 我的身邊 不是同一邊/友情曾像 諾亞方舟 堅強誓言/<h2 class="h2 spanall">我是堅持排成一列(column-span:all)的一列文字，還很機車的插在中間</h2>只是我 望著海面 等著永遠 模糊了視線/會不會 有一天 時間真的能倒退/退回 你的我的 回不去的 悠悠的歲月/也許會 有一天 世界真的有終點/也要和你舉起回憶釀的甜 和你再乾一杯/這些年 買了四輪 買了手錶 買了單眼/卻發現 追不到的 停不了的 還是那些/人生是 只有認命 只能宿命 只好宿醉/只剩下 高的笑點 低的哭點 卻沒成熟點/成熟就是 幻想幻滅 一場磨練/為什麼 只有夢想 越磨越小 小到不見/有時候 好想流淚 好想流淚 卻沒眼淚/期待會 你會不會 他會不會 開個同學會/他在等你 你在等我 我在等誰/又是誰 孩子沒睡 電話沒電 心情沒準備/天空不斷 黑了又亮 亮了又黑/那光陰 滄海桑田 遠走高飛 再沒力氣追/會不會 有一天 時間真的能倒退/退回 你的我的 回不去的 悠悠的歲月/也許會 有一天 世界真的有終點/也要和你舉起回憶釀的甜 和你再乾一杯/會不會 有一天 時間真的能倒退/退回 你的我的 回不去的 悠悠的歲月/也許會 有一天 世界真的有終點/也要和你舉起回憶釀的甜 和你再乾一杯/終究會 有一天 我們都變成昨天/是你 陪我走過 一生一回 匆匆的人間/有一天 就是今天 今天就是有一天/說出一直沒說 對你的感謝 和你再乾一杯/再乾一杯永遠 喝了就能萬歲 歲歲和年年/<br>＊時間都停了 他們都回來了/懷念的人啊 等你的來到/
+                </div>
+                <!-- / 或是像這樣，分欄中有一維持一列的標題 -->
+                <hr>
+             
+            </div>
+            <!-- / 右邊包好包滿 -->
+        </div>
+    </section>
+    <footer class="navbar">
+        <div class="container container-F">
+            <h4>蕨類的網頁好用語法整理</h4>
+            <a href="https://lihi.cc/beXo5/c-newspa">BLOG</a> ｜ <a href="https://twitter.com/fernhsu">TWITTER</a> ｜ <a href="fern.0424@gmail.com"><span class="glyphicon glyphicon-envelope"></span>fern.0424@gmail.com</a>
+            <p>Copyright © 2018 Fern Hsu All rights reserved</p>
+            <a id="openBtnSmallLeft" class="closebtn hidden-xs" href="javascript:void(0)" onclick="openNav()"><span class="glyphicon glyphicon-arrow-right"></span>打開側邊欄</a>
+        </div>
+    </footer>
+    <script>
+    //一載入頁面就判定：是否打開側邊欄
+    window.onload = sideMenuOpen();
+
+    function sideMenuOpen() {
+        var w = window.outerWidth;
+        if (document.body.width > 767 || w > 767) {
+            document.getElementById("mySidenav").style.display = "block";
+            document.getElementById("mySidenavRight").className = "col-sm-9";
+        } else {
+            document.getElementById("mySidenav").style.display = "none";
+            document.getElementById("mySidenavRight").className = "col-xs-12";
+        }
+
+    }
+    //打開側邊欄
+    function openNav() {
+        var w = window.outerWidth;
+        if (document.body.width > 767 || w > 767) {
+            document.getElementById("mySidenav").style.display = "block";
+            document.getElementById("mySidenavRight").className = "col-sm-9";
+            document.getElementById("openBtnSmallLeft").style.display = "none";
+        } else {
+            document.getElementById("mySidenav").style.display = "block";
+            document.getElementById("mySidenavRight").className = "col-xs-12";
+            document.getElementById("openBtnSmallLeft").style.display = "none";
+        }
+    }
+
+    function closeNav() {
+        var w = window.outerWidth;
+        // document.getElementById("mySidenav").style.display = "none";
+        if (document.body.width > 767 || w > 767) {
+            document.getElementById("mySidenav").style.display = "none";
+            document.getElementById("mySidenavRight").className = "col-xs-12";
+            document.getElementById("openBtnSmallLeft").style.display = "block";
+        } else {
+            document.getElementById("mySidenav").style.display = "none";
+            document.getElementById("mySidenavRight").className = "col-xs-12";
+            document.getElementById("openBtnSmallLeft").style.display = "block";
+        }
+
+    }
+    </script>
+</body>
+
+</html>

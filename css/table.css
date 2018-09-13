@@ -1,0 +1,242 @@
+/*傳統表格*/
+table{
+	max-width: 100%;
+	overflow-y: scroll;
+    border-collapse: collapse;
+}
+
+/*div table*/
+/*預設寬100%*/
+.divtable {
+    display: table;
+    width: 100%;
+}
+
+.divtable .thead {
+    display: table-header-group;
+}
+
+.divtable .tbody {
+    display: table-row-group;
+}
+
+.divtable .tfooter {
+    display: table-footer-group;
+}
+
+.divtable .tr {
+    display: table-row;
+}
+/*預設邊距*/
+.divtable .th,
+.divtable .td {
+    display: table-cell;
+    padding: 15px 5px;
+}
+/*表格標題，只能在table標籤下有一個，建議用title取代*/
+.divtable .caption{
+	display: table-caption;
+    text-align: center;
+}
+.divtable .col{
+	display: table-column;
+}
+/*選取幾欄*/
+.divtable .colgroup{
+	display: table-column-group;
+}
+
+
+/*RWD DIV表格*/
+/*RWD DIVtable*/
+.rwd-divtable {
+	min-width: 100%;
+    background: #fff;
+    overflow: hidden;
+    color: #4a4a4a;
+}
+/*th字體加粗*/
+.rwd-divtable .tr:first-child>.th {
+    font-weight: bold;
+}
+/*表格偶數行，只要是tr(不管內部包含th/td)的偶數都會加底色*/
+.rwd-divtable .tr:nth-of-type(even) {
+    background: #F5F6F7;
+}
+
+
+.rwd-divtable {
+    display: table;
+}
+
+.rwd-divtable .thead {
+    display: table-header-group;
+}
+
+.rwd-divtable .tbody {
+    display: table-row-group;
+}
+
+.rwd-divtable .tfooter {
+    display: table-footer-group;
+}
+
+.rwd-divtable .tr {
+    display: table-row;
+}
+
+.rwd-divtable .th,
+.rwd-divtable .td {
+    display: table-cell;
+    text-align: left;
+    padding: 15px 5px;
+}
+/*表格標題，只能在table標籤下有一個，建議用title取代*/
+.rwd-divtable .caption{
+	display: table-caption;
+    text-align: center;
+}
+.rwd-divtable .col{
+	display: table-column;
+}
+/*選取幾欄*/
+.rwd-divtable .colgroup{
+	display: table-column-group;
+}
+/*會先吃到這個設定讓表頭消失，但尺寸992px以下會再吃到display:block屬性*/
+.rwd-divtable .th {
+    display: none;
+}
+
+.rwd-divtable .td {
+    display: block;
+}
+
+.rwd-divtable .td:before {
+    content: attr(data-th) " : ";
+    font-weight: bold;
+    width: 7em;
+    display: inline-block;
+}
+.rwd-divtable .th,
+.rwd-divtable .td:before {
+    color: #4A4A4A;
+    font-weight: bold;
+}
+
+@media (min-width: 992px) {
+    .rwd-divtable .td:before {
+        display: none;
+    }
+    .rwd-divtable .th,
+    .rwd-divtable .td {
+        display: table-cell;
+        padding: 15px 5px;
+    }
+    .rwd-divtable .th:first-child,
+    .rwd-divtable .td:first-child {
+        padding-left: 10px;
+    }
+    .rwd-divtable .th:last-child,
+    .rwd-divtable .td:last-child {
+        padding-right: 10px;
+    }
+    .rwd-divtable .th,
+    .rwd-divtable .td {
+        padding: 15px 5px;
+        !important;
+    }
+    .rwd-divtable .th,
+    .rwd-divtable .td:before {
+        color: #4a4a4a;
+        font-weight: normal;
+    }
+}
+
+
+/*RWD表格*/
+/*RWD table*/
+
+.rwd-table {
+    background: #fff;
+    overflow: hidden;
+    color: #4a4a4a;
+}
+
+.rwd-table tr:first-child>th {
+    font-weight: bold;
+}
+
+
+/*表格偶數行，只要是tr(不管內部包含th/td)的偶數都會加底色*/
+
+.rwd-table tr:nth-of-type(even) {
+    background: #F5F6F7;
+}
+
+.rwd-table th,
+.rwd-table td {
+    margin: 15px 5px;
+}
+
+.rwd-table {
+    min-width: 100%;
+}
+
+
+/*會先吃到這個設定讓表頭消失，但尺寸992px以下會再吃到display:block屬性*/
+
+.rwd-table th {
+    display: none;
+}
+
+.rwd-table td {
+    display: block;
+}
+
+.rwd-table td:before {
+    content: attr(data-th) " : ";
+    font-weight: bold;
+    width: 7em;
+    display: inline-block;
+}
+
+.rwd-table th,
+.rwd-table td {
+    text-align: left;
+}
+
+.rwd-table th,
+.rwd-table td:before {
+    color: #4A4A4A;
+    font-weight: bold;
+}
+
+@media (min-width: 992px) {
+    .rwd-table td:before {
+        display: none;
+    }
+    .rwd-table th,
+    .rwd-table td {
+        display: table-cell;
+        padding: 15px 5px;
+    }
+    .rwd-table th:first-child,
+    .rwd-table td:first-child {
+        padding-left: 10px;
+    }
+    .rwd-table th:last-child,
+    .rwd-table td:last-child {
+        padding-right: 10px;
+    }
+    .rwd-table th,
+    .rwd-table td {
+        padding: 15px 5px;
+        !important;
+    }
+    .rwd-table th,
+    .rwd-table td:before {
+        color: #4a4a4a;
+        font-weight: normal;
+    }
+}

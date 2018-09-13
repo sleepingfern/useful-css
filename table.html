@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="img/ic_fav.png" />
+    <link rel="bookmark" href="img/ic_fav.png" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>兩種RWD表格的做法：傳統表格與DIV表格-蕨類的網頁好用語法整理</title>
+    <meta name="keywords" content="css,table,RWD,div table,自適應表格,手機版表格,蕨類,Fern,UI,design,蕨類的UI筆記,UI筆記" />
+    <meta name="description" content="兩種RWD表格的做法：傳統表格與DIV表格-蕨類自己常用的Html&CSS物件、設定或效果" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--     <link rel="stylesheet" href="css/docs.theme.min.css"> -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/table.css">
+    <!--[if lt IE 9]>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <!-- <script src="js/jquery.min 2.js"></script> -->
+    <!--js順序有差要注意-->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/miller_code.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light" role="navigation">
+        <div class="container container-F">
+            <div class="navbar-header">
+                <h1 class="logo m-0"><a class="navbar-brand" href="index.html"><img id="logoImg" alt="蕨類的網頁好用語法整理" src="img/logo.png"></a></h1>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">主功能列</span>
+                    <span class="glyphicon glyphicon-menu-hamburger"></span>
+                    <span class="icon-text">主功能</span>
+                </button>
+            </div>
+            <!-- 手機隱藏選單區 -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse wrapper-menu">
+                <!-- 主選單 -->
+                <ul class="nav navbar-nav navbar-right main-menu">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-hand-right"></span>CSS<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="table.html">表格&nbsp;&lt;table&gt;</a></li>
+                            <li><a href="likeNewsPaper.html">像報紙一樣的一列文字分欄&nbsp;column-rule Property</a></li>
+                            <li><a href="rangeSlider.html">拉霸滑條&nbsp;Range Slider</a></li>
+                            <li><a href="">還沒想到</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-hand-left"></span>JavaScript<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript.html">看看他寫的有用js</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>關於Fern<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://lihi.cc/beXo5/c-table" target="_blank">看他的部落格</a></li>
+                            <li><a href="https://twitter.com/fernhsu" target="_blank">看他的推特</a></li>
+                            <li><a href="contact.html">聯絡他</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- 手機隱藏選單區結束 -->
+            <script type="text/javascript">
+            var $ofweidht = innerWidth; //取得螢幕寬度
+            if ($ofweidht <= 768) { //設定判斷條件，大於等於1280時frametop的CSS屬性為block
+                document.getElementById("logoImg").src = 'img/logo-small.png';
+            } else {
+                document.getElementById("logoImg").src = 'img/logo.png';
+            }
+            </script>
+        </div>
+    </nav>
+    <!--nav結束-->
+    <section>
+        <div class="row m-0">
+            <div id="mySidenav" class="col-xs-12 col-sm-3 sidenav">
+                <ul class="media-list">
+                    <li class="row">
+                        <div class="col-xs-12">
+                            <a class="pull-right closebtn-smallLeft p-0" href="javascript:void(0)" onclick="closeNav()">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <h2 class="h2 mb-20">CSS</h2>
+                <ul class="nav nav-tabs tab-side">
+                    <li class="active">
+                        <a href="table.html" class="h3" aria-controls="表格">表格&nbsp;&lt;table&gt;</a>
+                    </li>
+                    <li>
+                        <a href="likeNewsPaper.html" class="h3" aria-controls="像報紙一樣的一列文字分欄">像報紙一樣的一列文字分欄&nbsp;CSS</a>
+                    </li>
+                    <li>
+                        <a href="rangeSlider.html" class="h3" aria-controls="拉霸滑條Range Slider">拉霸滑條&nbsp;Range Slider</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="mySidenavRight" class="col-xs-12 col-sm-9">
+                <!-- RWD div表格 -->
+                <h3 class="h3">RWD DIV表格</h3>
+                <div class="rwd-divtable">
+                    <div class="tr">
+                        <div class="th">年度<a href="" class="glyphicon glyphicon-chevron-down"></a></div>
+                        <div class="th">類別一</div>
+                        <div class="th">類別二</div>
+                        <div class="th">類別三</div>
+                        <div class="th">你全家都是</div>
+                    </div>
+                    <div class="tr">
+                        <div class="td" aria-label="年度" data-th="年度">100</div>
+                        <div class="td" aria-label="類別一" data-th="類別一"><a href="b2-1-2-searchResault.html">標題ＡＡＡＡＡＡＡＡ</a></div>
+                        <div class="td" aria-label="類別二" data-th="類別二">類別Ａ</div>
+                        <div class="td" aria-label="類別三" data-th="類別三">ＢＢＢ</div>
+                        <div class="td" aria-label="你全家都是" data-th="你全家都是"><a href="">貓咪</a></div>
+                    </div>
+                    <div class="tr">
+                        <div class="td" aria-label="年度" data-th="年度">100</div>
+                        <div class="td" aria-label="類別一" data-th="類別一"><a href="b2-1-2-searchResault.html">標題ＡＡＡＡＡＡＡＡ</a></div>
+                        <div class="td" aria-label="類別二" data-th="類別二">類別Ａ</div>
+                        <div class="td" aria-label="類別三" data-th="類別三">ＢＢＢ</div>
+                        <div class="td" aria-label="你全家都是" data-th="你全家都是"><a href="">貓咪</a></div>
+                    </div>
+                    <div class="tr">
+                        <div class="td" aria-label="年度" data-th="年度">100</div>
+                        <div class="td" aria-label="類別一" data-th="類別一"><a href="b2-1-2-searchResault.html">標題ＡＡＡＡＡＡＡＡ</a></div>
+                        <div class="td" aria-label="類別二" data-th="類別二">類別Ａ</div>
+                        <div class="td" aria-label="類別三" data-th="類別三">ＢＢＢ</div>
+                        <div class="td" aria-label="你全家都是" data-th="你全家都是"><a href="">貓咪</a></div>
+                    </div>
+                </div>
+                <!-- / RWD div表格 -->
+                <hr>
+                <!-- div表格 -->
+                <h3 class="h3">DIV傳統表格</h3>
+                <div style="height:70px;width:300px;background: #ff5050" title="This is my caption">建議用title取代table中的caption</div>
+                <div class="divtable">
+                    <div class="tr">
+                        <div class="th">年度<a href="" class="glyphicon glyphicon-chevron-down"></a></div>
+                        <div class="th">類別一</div>
+                        <div class="th">類別二</div>
+                        <div class="th">類別三</div>
+                        <div class="th">你全家都是</div>
+                    </div>
+                    <div class="tr">
+                        <div class="td" aria-label="年度" data-th="年度">100</div>
+                        <div class="td" aria-label="類別一" data-th="類別一"><a href="b2-1-2-searchResault.html">標題ＡＡＡＡＡＡＡＡ</a></div>
+                        <div class="td" aria-label="類別二" data-th="類別二">類別Ａ</div>
+                        <div class="td" aria-label="類別三" data-th="類別三">ＢＢＢ</div>
+                        <div class="td" aria-label="你全家都是" data-th="你全家都是"><a href="">貓咪</a></div>
+                    </div>
+                </div>
+                <!-- / div表格 -->
+                <hr>
+                <!-- RWD 傳統表格 -->
+                <h3 class="h3">RWD 傳統表格</h3>
+                <table class="rwd-table">
+                    <tr>
+                        <th>年度<a href="" class="glyphicon glyphicon-chevron-down"></a></th>
+                        <th>議題說明</th>
+                        <th>議題類別</th>
+                        <th>提案單位</th>
+                        <th>承辦單位</th>
+                    </tr>
+                    <tr>
+                        <td aria-label="年度" data-th="年度">100</td>
+                        <td aria-label="議題說明" data-th="議題說明"><a href="b2-1-2-searchResault.html">議題標題A&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</a></td>
+                        <td aria-label="議題類別" data-th="議題類別">類別A</td>
+                        <td aria-label="提案單位" data-th="提案單位">立法院</td>
+                        <td aria-label="承辦單位" data-th="承辦單位"><a href="">單位A</a></td>
+                    </tr>
+                    <tr>
+                        <td aria-label="年度" data-th="年度">100</td>
+                        <td aria-label="議題說明" data-th="議題說明"><a href="b2-1-2-searchResault.html">議題標題A&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</a></td>
+                        <td aria-label="議題類別" data-th="議題類別">類別A</td>
+                        <td aria-label="提案單位" data-th="提案單位">立法院</td>
+                        <td aria-label="承辦單位" data-th="承辦單位"><a href="">單位A</a></td>
+                    </tr>
+                    <tr>
+                        <td aria-label="年度" data-th="年度">100</td>
+                        <td aria-label="議題說明" data-th="議題說明"><a href="b2-1-2-searchResault.html">議題標題A&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</a></td>
+                        <td aria-label="議題類別" data-th="議題類別">類別A</td>
+                        <td aria-label="提案單位" data-th="提案單位">立法院</td>
+                        <td aria-label="承辦單位" data-th="承辦單位"><a href="">單位A</a></td>
+                    </tr>
+                    <tr>
+                        <td aria-label="年度" data-th="年度">100</td>
+                        <td aria-label="議題說明" data-th="議題說明"><a href="b2-1-2-searchResault.html">議題標題A&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</a></td>
+                        <td aria-label="議題類別" data-th="議題類別">類別A</td>
+                        <td aria-label="提案單位" data-th="提案單位">立法院</td>
+                        <td aria-label="承辦單位" data-th="承辦單位"><a href="">單位A</a></td>
+                    </tr>
+                    <tr>
+                        <td aria-label="年度" data-th="年度">100</td>
+                        <td aria-label="議題說明" data-th="議題說明"><a href="b2-1-2-searchResault.html">議題標題A&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</a></td>
+                        <td aria-label="議題類別" data-th="議題類別">類別A</td>
+                        <td aria-label="提案單位" data-th="提案單位">立法院</td>
+                        <td aria-label="承辦單位" data-th="承辦單位"><a href="">單位A</a></td>
+                    </tr>
+                </table>
+                <!-- / RWD 傳統表格 -->
+                <hr>
+                <!-- 傳統表格 -->
+                <style type="text/css">
+                .bg-1 {
+                    background: #ff5050;
+                }
+
+                .bg-2 {
+                    background: #eeffcc
+                }
+
+                .bg-3 {
+                    background: #eeccff
+                }
+                </style>
+                <h3>傳統表格</h3>
+                <table>
+                    <caption>表格的標題，只會在table標籤下有一個</caption>
+                    <colgroup>
+                        <!-- span=跨幾欄，套用什麼className/style -->
+                        <col span="1" class="bg-1">
+                        <col span="1" class="bg-2">
+                        <col span="2" class="bg-3">
+                    </colgroup>
+                    <tr>
+                        <td> </td>
+                        <th scope="col">Batman</th>
+                        <th scope="col">Robin</th>
+                        <th scope="col">The Flash</th>
+                        <th scope="col">Kid Flash</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Skill</th>
+                        <td>Smarts</td>
+                        <td>Dex, acrobat</td>
+                        <td>Super speed</td>
+                        <td>Super speed</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Weapon</th>
+                        <td>Martial, gadgets</td>
+                        <td>Martial, gadgets</td>
+                        <td>Martial</td>
+                        <td>Martial</td>
+                    </tr>
+                </table>
+                <!-- / 傳統表格 -->
+            </div>
+            <!-- / 右邊包好包滿 -->
+        </div>
+    </section>
+    <footer class="navbar">
+        <div class="container container-F">
+            <h4>蕨類的網頁好用語法整理</h4>
+            <a href="https://lihi.cc/beXo5/c-table">BLOG</a> ｜ <a href="https://twitter.com/fernhsu">TWITTER</a> ｜ <a href="fern.0424@gmail.com"><span class="glyphicon glyphicon-envelope"></span>fern.0424@gmail.com</a>
+            <p>Copyright © 2018 Fern Hsu All rights reserved</p>
+            <a id="openBtnSmallLeft" class="closebtn hidden-xs" href="javascript:void(0)" onclick="openNav()"><span class="glyphicon glyphicon-arrow-right"></span>打開側邊欄</a>
+        </div>
+    </footer>
+    <script>
+    //一載入頁面就判定：是否打開側邊欄
+    window.onload = sideMenuOpen();
+
+    function sideMenuOpen() {
+        var w = window.outerWidth;
+        if (document.body.width > 767 || w > 767) {
+            document.getElementById("mySidenav").style.display = "block";
+            document.getElementById("mySidenavRight").className = "col-sm-9";
+        } else {
+            document.getElementById("mySidenav").style.display = "none";
+            document.getElementById("mySidenavRight").className = "col-xs-12";
+        }
+
+    }
+    //打開側邊欄
+    function openNav() {
+        var w = window.outerWidth;
+        if (document.body.width > 767 || w > 767) {
+            document.getElementById("mySidenav").style.display = "block";
+            document.getElementById("mySidenavRight").className = "col-sm-9";
+            document.getElementById("openBtnSmallLeft").style.display = "none";
+        } else {
+            document.getElementById("mySidenav").style.display = "block";
+            document.getElementById("mySidenavRight").className = "col-xs-12";
+            document.getElementById("openBtnSmallLeft").style.display = "none";
+        }
+    }
+
+    function closeNav() {
+        var w = window.outerWidth;
+        // document.getElementById("mySidenav").style.display = "none";
+        if (document.body.width > 767 || w > 767) {
+            document.getElementById("mySidenav").style.display = "none";
+            document.getElementById("mySidenavRight").className = "col-xs-12";
+            document.getElementById("openBtnSmallLeft").style.display = "block";
+        } else {
+            document.getElementById("mySidenav").style.display = "none";
+            document.getElementById("mySidenavRight").className = "col-xs-12";
+            document.getElementById("openBtnSmallLeft").style.display = "block";
+        }
+
+    }
+    </script>
+</body>
+
+</html>
