@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="img/ic_fav.png" />
+    <link rel="bookmark" href="img/ic_fav.png" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>拉霸滑條&nbsp;Range Slider-蕨類的網頁好用語法整理</title>
+    <meta name="keywords" content="css,拉霸,滑條,Range Slider,html scroll bar,slider,蕨類,Fern,UI,design,蕨類的UI筆記,UI筆記" />
+    <meta name="description" content="兩種RWD表格的做法：傳統表格與DIV表格-蕨類自己常用的Html&CSS物件、設定或效果" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--     <link rel="stylesheet" href="css/docs.theme.min.css"> -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  
+    <!--[if lt IE 9]>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <!-- <script src="js/jquery.min 2.js"></script> -->
+    <!--js順序有差要注意-->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/miller_code.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light" role="navigation">
+        <div class="container container-F">
+            <div class="navbar-header">
+                <h1 class="logo m-0"><a class="navbar-brand" href="index.html"><img id="logoImg" alt="蕨類的網頁好用語法整理" src="img/logo.png"></a></h1>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">主功能列</span>
+                    <span class="glyphicon glyphicon-menu-hamburger"></span>
+                    <span class="icon-text">主功能</span>
+                </button>
+            </div>
+            <!-- 手機隱藏選單區 -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse wrapper-menu">
+                <!-- 主選單 -->
+                <ul class="nav navbar-nav navbar-right main-menu">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-hand-right"></span>CSS<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="table.html">表格&nbsp;&lt;table&gt;</a></li>
+                            <li><a href="likeNewsPaper.html">像報紙一樣的一列文字分欄&nbsp;column-rule Property</a></li>
+                            <li><a href="rangeSlider.html">拉霸滑條&nbsp;Range Slider</a></li>
+                            <li><a href="">還沒想到</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-hand-left"></span>JavaScript<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript.html">看看他寫的有用js</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>關於Fern<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://lihi.cc/beXo5/c-slider" target="_blank">看他的部落格</a></li>
+                            <li><a href="https://twitter.com/fernhsu" target="_blank">看他的推特</a></li>
+                            <li><a href="contact.html">聯絡他</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- 手機隱藏選單區結束 -->
+            <script type="text/javascript">
+            var $ofweidht = innerWidth; //取得螢幕寬度
+            if ($ofweidht <= 768) { //設定判斷條件，大於等於1280時frametop的CSS屬性為block
+                document.getElementById("logoImg").src = 'img/logo-small.png';
+            } else {
+                document.getElementById("logoImg").src = 'img/logo.png';
+            }
+            </script>
+        </div>
+    </nav>
+    <!--nav結束-->
+    <section>
+        <div class="row m-0">
+            <div id="mySidenav" class="col-xs-12 col-sm-3 sidenav">
+                <ul class="media-list">
+                    <li class="row">
+                        <div class="col-xs-12">
+                            <a class="pull-right closebtn-smallLeft p-0" href="javascript:void(0)" onclick="closeNav()">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <h2 class="h2 mb-20">CSS</h2>
+                <ul class="nav nav-tabs tab-side">
+                    <li>
+                        <a href="table.html" class="h3" aria-controls="表格">表格&nbsp;&lt;table&gt;</a>
+                    </li>
+                    <li>
+                        <a href="likeNewsPaper.html" class="h3" aria-controls="像報紙一樣的一列文字分欄">像報紙一樣的一列文字分欄&nbsp;CSS</a>
+                    </li>
+                    <li class="active">
+                        <a href="rangeSlider.html" class="h3" aria-controls="拉霸滑條Range Slider">拉霸滑條&nbsp;Range Slider</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="mySidenavRight" class="col-xs-12 col-sm-9">
+
+            <h2>還有其他的：</h2>
+            <h3>純DIV表格—文字第二行對齊第一行</h3>
+            <a href="https://codepen.io/FernHsu/pen/KOzzxN">點我</a>
+            <h3>純DIV表格—文字第二行無縮排</h3>
+            <a href="https://codepen.io/FernHsu/pen/OKPQVR">點我</a>
+            <h3>用flex 解決Bootstrap 3 col 到第二行時會出現的跑版問題(等高)</h3>
+            <a href="https://codepen.io/FernHsu/pen/EBJgyP">點我</a>
+            
+            </div>
+            <!-- / 右邊包好包滿 -->
+        </div>
+    </section>
+    <footer class="navbar">
+        <div class="container container-F">
+            <h4>蕨類的網頁好用語法整理</h4>
+            <a href="https://lihi.cc/beXo5/c-slider">BLOG</a> ｜ <a href="https://twitter.com/fernhsu">TWITTER</a> ｜ <a href="fern.0424@gmail.com"><span class="glyphicon glyphicon-envelope"></span>fern.0424@gmail.com</a>
+            <p>Copyright © 2018 Fern Hsu All rights reserved</p>
+            <a id="openBtnSmallLeft" class="closebtn hidden-xs" href="javascript:void(0)" onclick="openNav()"><span class="glyphicon glyphicon-arrow-right"></span>打開側邊欄</a>
+        </div>
+    </footer>
+    <script>
+    //一載入頁面就判定：是否打開側邊欄
+    window.onload = sideMenuOpen();
+
+    function sideMenuOpen() {
+        var w = window.outerWidth;
+        if (document.body.width > 767 || w > 767) {
+            document.getElementById("mySidenav").style.display = "block";
+            document.getElementById("mySidenavRight").className = "col-sm-9";
+        } else {
+            document.getElementById("mySidenav").style.display = "none";
+            document.getElementById("mySidenavRight").className = "col-xs-12";
+        }
+
+    }
+    //打開側邊欄
+    function openNav() {
+        var w = window.outerWidth;
+        if (document.body.width > 767 || w > 767) {
+            document.getElementById("mySidenav").style.display = "block";
+            document.getElementById("mySidenavRight").className = "col-sm-9";
+            document.getElementById("openBtnSmallLeft").style.display = "none";
+        } else {
+            document.getElementById("mySidenav").style.display = "block";
+            document.getElementById("mySidenavRight").className = "col-xs-12";
+            document.getElementById("openBtnSmallLeft").style.display = "none";
+        }
+    }
+
+    function closeNav() {
+        var w = window.outerWidth;
+        // document.getElementById("mySidenav").style.display = "none";
+        if (document.body.width > 767 || w > 767) {
+            document.getElementById("mySidenav").style.display = "none";
+            document.getElementById("mySidenavRight").className = "col-xs-12";
+            document.getElementById("openBtnSmallLeft").style.display = "block";
+        } else {
+            document.getElementById("mySidenav").style.display = "none";
+            document.getElementById("mySidenavRight").className = "col-xs-12";
+            document.getElementById("openBtnSmallLeft").style.display = "block";
+        }
+
+    }
+    </script>
+</body>
+
+</html>
